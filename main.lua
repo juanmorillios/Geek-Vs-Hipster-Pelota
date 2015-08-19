@@ -14,12 +14,6 @@ local centerY = display.contentCenterY
 
 local ancho = display.contentWidth
 local alto = display.contentHeight
-local pared = display.contentWidth
-local pared2 = display.contentHeight
-local paredGeneral = display.contentHeight / 3
-local pared2 = pared * pared2
-
-
 
 
 --Creamos la pelota
@@ -31,6 +25,19 @@ physics.addBody( pelota, "dynamic", {density = 0.9, friction = 0.2, bounce = 0.7
 local plataforma = display.newRect(ancho/4, centerY, ancho/2, 10)
 
 physics.addBody( plataforma, "static", {density = 0.9, friction = 0.1, bounce = 0.8})
+
+local plataforma2 = display.newRect(centerX +160, alto -80, ancho -20, 10)
+
+physics.addBody(plataforma2, "static", {density = 0.7, friction = 0.2, bounce = 0.5} )
+
+local pared1 = display.newRect(ancho/1, centerX +60, 10,400)
+
+physics.addBody(pared1, "static")
+
+local pared2 = display.newRect(ancho/1, centerX +110, 10,400)
+
+physics.addBody(pared2, "static")
+
 
 for i = 1, 4 do
 
